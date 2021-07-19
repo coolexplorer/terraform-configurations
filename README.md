@@ -1,2 +1,2 @@
-# terraform-charts
-Terraform chart to provision the infrastructure
+# terraform-configurations
+Terraform configurations to provision the infrastructure
