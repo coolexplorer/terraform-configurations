@@ -70,8 +70,19 @@ resource "azurerm_resource_group" "demo_rg1" {
 6. Top level blocks
     - Fundamental blocks
         . Terraform block
+            . Special block used to configure some behaviors
+            . Specifying a required Terraform CLI Version
+            . Specifying Provider Requirements and Versions
+            . Configuring a Terraform Backend (Terraform state, Remote state manage area)
         . Providers block
+            . Hearth of Terraform
+            . Terrraform relies on providers to interact with Remote Systems
+            . Declare providers and use them
+            . Provider configuratios belong to Root Module
         . Resources block
+            . Each resource block describes one or more infrastructure objects
+            . Resource Syntax
+            . Resource Behavior
     - Variable blocks
         . Input variable block
         . Output values block
