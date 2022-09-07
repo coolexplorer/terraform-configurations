@@ -1,11 +1,17 @@
 variable "location" {
-  type = string
+  type    = string
   default = "Canada Central"
 }
 
 variable "network_rg_name" {
-  type = string
+  type        = string
   description = "The network resource group name"
+}
+
+variable "owner" {
+  type        = string
+  description = "The owner name"
+  default     = "Allen"
 }
 
 # Credentials

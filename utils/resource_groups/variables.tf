@@ -1,6 +1,12 @@
 variable "location" {
-  type = string
+  type    = string
   default = "Canada Central"
+}
+
+variable "owner" {
+  type        = string
+  description = "The owner name"
+  default     = "Allen"
 }
 
 # Credentials
