@@ -18,3 +18,8 @@ resource "azurerm_resource_group" "aks_rg" {
   name     = "aks-rg-${random_string.random.result}"
   location = var.location
 }
+
+resource "azurerm_resource_group" "aks_net_rg" {
+  name     = "aks-net-rg-${random_string.random.result}"
+  location = var.location
+}

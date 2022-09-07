@@ -5,7 +5,7 @@ resource "random_string" "random" {
 }
 
 resource "azurerm_virtual_network" "vm_vnet" {
-  name                = "vnet-vm-${random_string.random.result}"
+  name                = "vm-vnet-${random_string.random.result}"
   location            = var.location
   resource_group_name = var.network_rg_name
   address_space       = ["10.0.0.0/26"]
@@ -27,7 +27,7 @@ resource "azurerm_virtual_network" "vm_vnet" {
 }
 
 resource "azurerm_virtual_network" "aks_vnet" {
-  name                = "vnet-aks-${random_string.random.result}"
+  name                = "aks-vnet-${random_string.random.result}"
   location            = var.location
   resource_group_name = var.network_rg_name
   address_space       = ["10.1.0.0/21"]
