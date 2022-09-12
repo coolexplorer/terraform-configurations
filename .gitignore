@@ -30,3 +30,6 @@ override.tf.json
 
 # Test vars
 **/test*.tfvars
+
+# Terraform Lock files
+**/.terraform.lock.hcl
