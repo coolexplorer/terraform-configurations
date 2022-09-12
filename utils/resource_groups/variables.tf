@@ -9,6 +9,12 @@ variable "owner" {
   default     = "Allen"
 }
 
+variable "name_postfix" {
+  type        = string
+  description = "The name postfix that the lenght is limited by 4 characters"
+  default     = null
+}
+
 # Credentials
 variable "azure_client_id" {
   sensitive = true

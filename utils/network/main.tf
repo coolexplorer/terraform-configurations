@@ -1,11 +1,16 @@
 resource "random_string" "random" {
+  count   = var.name_postfix != null ? 1 : 0
   length  = 4
   numeric = true
   special = false
 }
 
+locals {
+  postfix = var.name_postfix != null ? var.name_postfix : random_string.random[0].result
+}
+
 resource "azurerm_virtual_network" "vm_vnet" {
-  name                = "vm-vnet-${random_string.random.result}"
+  name                = "vm-vnet-${local.postfix}"
   location            = var.location
   resource_group_name = var.network_rg_name
   address_space       = ["10.0.0.0/26"]
@@ -27,7 +32,7 @@ resource "azurerm_virtual_network" "vm_vnet" {
 }
 
 resource "azurerm_virtual_network" "aks_vnet" {
-  name                = "aks-vnet-${random_string.random.result}"
+  name                = "aks-vnet-${local.postfix}"
   location            = var.location
   resource_group_name = var.network_rg_name
   address_space       = ["10.1.0.0/21"]
